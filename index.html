@@ -4,10 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Protect Sensitive Locations — ICE Enforcement Tracker</title>
-<meta name="description" content="Documenting ICE enforcement actions at sensitive locations: churches, schools, hospitals, and courthouses across the United States.">
+<meta name="description" content="Documenting ICE and Border Patrol enforcement actions at sensitive locations: churches, schools, hospitals, and courthouses across the United States.">
 <meta property="og:title" content="Protect Sensitive Locations">
 <meta property="og:description" content="Documenting ICE enforcement actions at churches, schools, hospitals, and courthouses.">
 <meta property="og:url" content="https://protectsensitivelocations.org">
+<meta property="og:image" content="https://protectsensitivelocations.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://protectsensitivelocations.org/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -40,314 +45,68 @@
   --sans: 'DM Sans', system-ui, sans-serif;
   --nav-h: 56px;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--sans);
-  background: var(--paper);
-  color: var(--ink);
-  font-size: 16px;
-  line-height: 1.6;
-}
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; }
 
 /* NAV */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--ink);
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  border-bottom: 2px solid var(--accent);
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--ink); height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; border-bottom: 2px solid var(--accent);
 }
-
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  color: var(--paper);
-  text-decoration: none;
-  letter-spacing: 0.01em;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  color: var(--paper-3);
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.15s;
-}
-
+.nav-logo { font-family: var(--serif); font-size: 1.05rem; color: var(--paper); text-decoration: none; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--paper-3); text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.15s; }
 .nav-links a:hover { color: var(--paper); }
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--paper);
-  font-size: 1.5rem;
-  line-height: 1;
-}
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--paper); font-size: 1.5rem; line-height: 1; }
 
 /* HERO */
-.hero {
-  background: var(--ink);
-  color: var(--paper);
-  padding: 5rem 2rem 4rem;
-  border-bottom: 1px solid #333;
-}
-
-.hero-inner {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.hero-eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-}
-
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  line-height: 1.08;
-  color: var(--paper);
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: #c8b8a8;
-}
-
-.hero-lead {
-  font-size: 1.05rem;
-  color: #b0a898;
-  max-width: 640px;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-  font-weight: 300;
-}
-
-.hero-stats {
-  display: flex;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  padding-top: 2rem;
-  border-top: 1px solid #2a2a2a;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.stat-n {
-  font-family: var(--serif);
-  font-size: 2.4rem;
-  color: var(--paper);
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.72rem;
-  color: var(--ink-3);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
+.hero { background: var(--ink); color: var(--paper); padding: 5rem 2rem 4rem; border-bottom: 1px solid #333; }
+.hero-inner { max-width: 860px; margin: 0 auto; }
+.hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 1.25rem; }
+.hero h1 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.08; color: var(--paper); margin-bottom: 1.5rem; font-weight: 400; }
+.hero h1 em { font-style: italic; color: #c8b8a8; }
+.hero-lead { font-size: 1.05rem; color: #b0a898; max-width: 640px; line-height: 1.7; margin-bottom: 2.5rem; font-weight: 300; }
+.hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid #2a2a2a; }
+.stat { display: flex; flex-direction: column; gap: 0.25rem; }
+.stat-n { font-family: var(--serif); font-size: 2.4rem; color: var(--paper); line-height: 1; }
+.stat-label { font-size: 0.72rem; color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* SECTIONS */
-section {
-  padding: 4rem 2rem;
-}
-
-section + section {
-  border-top: 1px solid var(--rule);
-}
-
-.section-inner {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  color: var(--ink);
-}
-
-.section-body {
-  color: var(--ink-2);
-  font-size: 0.97rem;
-  line-height: 1.8;
-  font-weight: 300;
-}
-
+section { padding: 4rem 2rem; }
+section + section { border-top: 1px solid var(--rule); }
+.section-inner { max-width: 860px; margin: 0 auto; }
+.section-label { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.75rem; }
+.section-title { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; color: var(--ink); }
+.section-body { color: var(--ink-2); font-size: 0.97rem; line-height: 1.8; font-weight: 300; }
 .section-body p + p { margin-top: 1rem; }
-
-.placeholder-notice {
-  display: inline-block;
-  background: var(--accent-light);
-  border-left: 3px solid var(--accent);
-  padding: 0.6rem 1rem;
-  font-size: 0.8rem;
-  color: var(--accent);
-  margin-top: 1.25rem;
-  font-style: italic;
-}
-
-/* MAP */
-#map-section { background: var(--paper-2); }
-
-#map {
-  width: 100%;
-  height: 460px;
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  margin-top: 1.5rem;
-}
 
 /* TRACKER */
 #tracker-section { background: var(--paper); }
-
-.filters {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.75rem;
-  align-items: center;
-}
-
-.filters label {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  font-weight: 500;
-  margin-right: 0.25rem;
-}
-
+.filters { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.75rem; align-items: center; }
+.filters label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin-right: 0.25rem; }
 .filter-select {
-  appearance: none;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  padding: 0.45rem 2rem 0.45rem 0.75rem;
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  color: var(--ink);
+  appearance: none; background: var(--paper); border: 1px solid var(--rule); border-radius: 2px;
+  padding: 0.45rem 2rem 0.45rem 0.75rem; font-family: var(--sans); font-size: 0.82rem; color: var(--ink);
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b6b6b'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.65rem center;
-  transition: border-color 0.15s;
+  background-repeat: no-repeat; background-position: right 0.65rem center; transition: border-color 0.15s;
 }
-
 .filter-select:hover { border-color: var(--ink-3); }
 .filter-select:focus { outline: none; border-color: var(--ink); }
-
-.filter-reset {
-  background: none;
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  padding: 0.45rem 0.9rem;
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  color: var(--ink-3);
-  cursor: pointer;
-  transition: all 0.15s;
-  letter-spacing: 0.05em;
-}
-
-.filter-reset:hover {
-  border-color: var(--ink-3);
-  color: var(--ink);
-}
-
-.results-count {
-  font-size: 0.78rem;
-  color: var(--ink-3);
-  margin-left: auto;
-  font-style: italic;
-}
+.filter-reset { background: none; border: 1px solid var(--rule); border-radius: 2px; padding: 0.45rem 0.9rem; font-family: var(--sans); font-size: 0.78rem; color: var(--ink-3); cursor: pointer; transition: all 0.15s; letter-spacing: 0.05em; }
+.filter-reset:hover { border-color: var(--ink-3); color: var(--ink); }
+.results-count { font-size: 0.78rem; color: var(--ink-3); margin-left: auto; font-style: italic; }
 
 /* CARDS */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
-}
-
-.card {
-  background: var(--paper);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  transition: background 0.15s;
-}
-
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.card { background: var(--paper); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: background 0.15s; }
 .card:hover { background: var(--paper-2); }
-
-.card-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.card-date {
-  font-size: 0.72rem;
-  color: var(--ink-3);
-  letter-spacing: 0.06em;
-  font-weight: 400;
-  white-space: nowrap;
-}
-
-.card-tag {
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 500;
-  padding: 0.2rem 0.55rem;
-  border-radius: 2px;
-  white-space: nowrap;
-}
-
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
+.card-date { font-size: 0.72rem; color: var(--ink-3); letter-spacing: 0.06em; font-weight: 400; white-space: nowrap; }
+.card-tag { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; padding: 0.2rem 0.55rem; border-radius: 2px; white-space: nowrap; }
 .tag-Religious { background: var(--tag-church-bg); color: var(--tag-church); }
 .tag-School { background: var(--tag-school-bg); color: var(--tag-school); }
 .tag-Court { background: var(--tag-court-bg); color: var(--tag-court); }
@@ -355,121 +114,34 @@ section + section {
 .tag-Essential { background: var(--tag-services-bg); color: var(--tag-services); }
 .tag-Facility { background: var(--tag-facility-bg); color: var(--tag-facility); }
 .tag-Food { background: var(--tag-services-bg); color: var(--tag-services); }
-
-.card-location {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  line-height: 1.25;
-  color: var(--ink);
-}
-
-.card-place {
-  font-size: 0.78rem;
-  color: var(--ink-3);
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.card-place::before {
-  content: '';
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-.card-desc {
-  font-size: 0.85rem;
-  color: var(--ink-2);
-  line-height: 1.65;
-  font-weight: 300;
-  flex: 1;
-}
-
-.card-source {
-  font-size: 0.72rem;
-  color: var(--accent);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.15s;
-  align-self: flex-start;
-}
-
+.card-location { font-family: var(--serif); font-size: 1.05rem; line-height: 1.25; color: var(--ink); }
+.card-place { font-size: 0.78rem; color: var(--ink-3); display: flex; align-items: center; gap: 0.3rem; }
+.card-place::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.card-desc { font-size: 0.85rem; color: var(--ink-2); line-height: 1.65; font-weight: 300; flex: 1; }
+.card-source { font-size: 0.72rem; color: var(--accent); text-decoration: none; letter-spacing: 0.04em; border-bottom: 1px solid transparent; transition: border-color 0.15s; align-self: flex-start; }
 .card-source:hover { border-color: var(--accent); }
+.no-results { text-align: center; padding: 3rem; color: var(--ink-3); font-style: italic; background: var(--paper); border: 1px solid var(--rule); }
 
-.no-results {
-  text-align: center;
-  padding: 3rem;
-  color: var(--ink-3);
-  font-style: italic;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-}
+/* MAP */
+#map-section { background: var(--paper-2); }
+#map { width: 100%; height: 460px; border: 1px solid var(--rule); border-radius: 2px; margin-top: 1.5rem; }
+.map-legend { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-top: 1rem; }
+.legend-item { display: flex; align-items: center; gap: 0.45rem; font-size: 0.75rem; color: var(--ink-3); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; border: 1.5px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.15); }
 
-/* CONTEXT SECTIONS */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 2rem;
-}
-
-.pullquote {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  line-height: 1.45;
-  color: var(--ink);
-  font-style: italic;
-  border-left: 3px solid var(--accent);
-  padding-left: 1.5rem;
-  margin: 2rem 0;
-}
+/* CONTEXT */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+.pullquote { font-family: var(--serif); font-size: 1.35rem; line-height: 1.45; color: var(--ink); font-style: italic; border-left: 3px solid var(--accent); padding-left: 1.5rem; margin: 2rem 0; }
 
 /* FOOTER */
-footer {
-  background: var(--ink);
-  color: var(--ink-3);
-  padding: 3rem 2rem;
-  font-size: 0.8rem;
-  line-height: 1.7;
-}
-
-.footer-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.footer-brand {
-  font-family: var(--serif);
-  font-size: 1rem;
-  color: var(--paper-3);
-  margin-bottom: 0.5rem;
-}
-
+footer { background: var(--ink); color: var(--ink-3); padding: 3rem 2rem; font-size: 0.8rem; line-height: 1.7; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.footer-brand { font-family: var(--serif); font-size: 1rem; color: var(--paper-3); margin-bottom: 0.5rem; }
 .footer-note { max-width: 380px; }
-
 .footer-links { display: flex; flex-direction: column; gap: 0.35rem; }
 .footer-links a { color: var(--ink-3); text-decoration: none; }
 .footer-links a:hover { color: var(--paper-3); }
-
-.last-updated {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #222;
-  font-size: 0.72rem;
-  color: #444;
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
-}
+.last-updated { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #222; font-size: 0.72rem; color: #444; max-width: 860px; margin-left: auto; margin-right: auto; }
 
 /* RESPONSIVE */
 @media (max-width: 680px) {
@@ -485,14 +157,9 @@ footer {
   .results-count { margin-left: 0; width: 100%; }
   #map { height: 320px; }
 }
-
-/* Leaflet popup */
-.leaflet-popup-content-wrapper {
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-}
-.popup-loc { font-family: var(--serif); font-size: 0.95rem; margin-bottom: 0.2rem; }
-.popup-meta { font-size: 0.75rem; color: var(--ink-3); }
+.leaflet-popup-content-wrapper { border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+.popup-loc { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.95rem; margin-bottom: 0.2rem; }
+.popup-meta { font-size: 0.75px; color: #6b6b6b; }
 </style>
 </head>
 <body>
@@ -514,53 +181,26 @@ footer {
 
 <div class="hero">
   <div class="hero-inner">
-    <p class="hero-eyebrow">Documentation Project</p>
+    <p class="hero-eyebrow">Incident Tracker</p>
     <h1>ICE Enforcement at<br><em>Sensitive Locations</em></h1>
-    <p class="hero-lead">Since January 2025, the Trump administration rescinded longstanding guidance protecting sensitive locations — churches, schools, hospitals, and courthouses — from immigration enforcement. This tracker documents the result.</p>
+    <p class="hero-lead">On January 20, 2025, the Trump administration rescinded longstanding guidance protecting sensitive locations — including churches, schools, hospitals, and courthouses — from immigration enforcement. This tracker documents the result.</p>
     <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-n" id="stat-total">—</span>
-        <span class="stat-label">Documented Incidents</span>
-      </div>
-      <div class="stat">
-        <span class="stat-n" id="stat-states">—</span>
-        <span class="stat-label">States Affected</span>
-      </div>
-      <div class="stat">
-        <span class="stat-n" id="stat-types">—</span>
-        <span class="stat-label">Location Types</span>
-      </div>
-      <div class="stat">
-        <span class="stat-n" id="stat-updated">—</span>
-        <span class="stat-label">Last Updated</span>
-      </div>
+      <div class="stat"><span class="stat-n" id="stat-total">—</span><span class="stat-label">Documented Incidents</span></div>
+      <div class="stat"><span class="stat-n" id="stat-types">—</span><span class="stat-label">Location Types</span></div>
+      <div class="stat"><span class="stat-n" id="stat-updated">—</span><span class="stat-label">Last Updated</span></div>
     </div>
   </div>
 </div>
-
-<!-- MAP -->
-<section id="map-section">
-  <div class="section-inner">
-    <p class="section-label">Geographic Overview</p>
-    <h2 class="section-title">Incidents Across the United States</h2>
-    <div id="map"></div>
-  </div>
-</section>
 
 <!-- TRACKER -->
 <section id="tracker-section">
   <div class="section-inner">
     <p class="section-label">Incident Database</p>
     <h2 class="section-title">Documented Enforcement Actions</h2>
-
     <div class="filters">
       <label>Filter by</label>
-      <select class="filter-select" id="filter-state" onchange="applyFilters()">
-        <option value="">All States</option>
-      </select>
-      <select class="filter-select" id="filter-type" onchange="applyFilters()">
-        <option value="">All Location Types</option>
-      </select>
+      <select class="filter-select" id="filter-state" onchange="applyFilters()"><option value="">All States</option></select>
+      <select class="filter-select" id="filter-type" onchange="applyFilters()"><option value="">All Location Types</option></select>
       <select class="filter-select" id="sort-by" onchange="applyFilters()">
         <option value="date-desc">Newest First</option>
         <option value="date-asc">Oldest First</option>
@@ -570,23 +210,56 @@ footer {
       <button class="filter-reset" onclick="resetFilters()">Reset</button>
       <span class="results-count" id="results-count"></span>
     </div>
-
     <div class="cards-grid" id="cards-grid"></div>
     <div class="no-results" id="no-results" style="display:none;">No incidents match the current filters.</div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map-section">
+  <div class="section-inner">
+    <p class="section-label">Incident Map</p>
+    <h2 class="section-title">Incidents Across the United States</h2>
+    <div id="map"></div>
+    <div class="map-legend">
+      <div class="legend-item"><span class="legend-dot" style="background:#1a4a6b;"></span>Religious Site</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#2d6a2d;"></span>School</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#6b3a00;"></span>Courthouse</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#6b006b;"></span>Hospital / Medical</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#00506b;"></span>Essential Services</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#00506b;"></span>Food Pantry</div>
+    </div>
   </div>
 </section>
 
 <!-- LEGISLATION -->
 <section id="legislation" style="background: var(--paper-2);">
   <div class="section-inner">
-    <p class="section-label">Legislative Context</p>
+    <p class="section-label">History and Legislative Context</p>
     <h2 class="section-title">The Protecting Sensitive Locations Act</h2>
     <div class="section-body">
-      <p>For decades, U.S. immigration enforcement agencies maintained formal guidance limiting enforcement actions at or near locations considered "sensitive" — including houses of worship, schools, hospitals, and sites providing social services. This guidance, first codified under the Obama administration and extended under Trump's first term, was premised on the recognition that enforcement at these locations would impede access to essential services and undermine community trust.</p>
-      <p>In January 2025, the Trump administration rescinded this longstanding guidance entirely, removing all formal protections for sensitive locations and directing immigration agents to pursue enforcement without geographic limitations.</p>
-      <div class="pullquote">"No location is off-limits. Churches, schools — these cannot be sanctuaries from federal law."<br><span style="font-size:0.8rem; font-style:normal; color: var(--ink-3);">— DHS Secretary Kristi Noem, January 2025</span></div>
-      <p>In response, members of Congress introduced the <strong>Protecting Sensitive Locations Act</strong>, which would codify the prior enforcement guidance into federal statute, prohibiting immigration arrests, searches, or surveillance at houses of worship, schools, hospitals, and social services facilities except in defined emergency circumstances.</p>
-      <p class="placeholder-notice">✎ This section is a placeholder. Replace with a full bill summary, sponsor list, and legislative status when ready.</p>
+      <p>Beginning in 1993, Democratic and Republican presidential administrations upheld policies affirming the principle that people must be able to access places such as schools, houses of worship, courthouses, and other locations that provide essential services without fear of detention or deportation.</p>
+      <p>In the more than three decades these "sensitive locations" guidelines were in place, Congress never codified policies limiting immigration enforcement action in sensitive locations. Without statutory protections, the current administration was able to rescind the latest iteration of the guidance on the first day of his second term.</p>
+      <p>Now, the threat of immigration enforcement is eroding individuals' and families' religious freedom and access to important community services. When people can take their child to school, go to the doctor, attend religious services, or appear in court without fear, families, neighborhoods, and institutions that uphold civic and religious life all stand to benefit.</p>
+      <p>The <strong>Protecting Sensitive Locations Act</strong> (<strong>H.R. 1061 / S. 455</strong>) — led by Rep. Adriano Espaillat and Senator Richard Blumenthal — would limit immigration enforcement in places where essential services, education, religious activities, and civic participation occur, or within 1,000 feet of such places. Under the bill, these locations include, but are not limited to:</p>
+      <ul style="margin: 1rem 0 1rem 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+        <li>Places of worship and sites of religious ceremonies</li>
+        <li>Health care facilities, such as hospitals, clinics, and mental health centers</li>
+        <li>Schools and educational settings, including preschools, K–12 schools, colleges, and school activities</li>
+        <li>Child-focused locations, including childcare centers, foster care facilities, playgrounds, and school bus stops</li>
+        <li>Disaster relief and social service locations, including shelters, food banks, and community service providers</li>
+        <li>Civic and government locations, such as courthouses, congressional offices, Social Security offices, DMVs, and polling places</li>
+        <li>Public institutions, including libraries and labor union halls</li>
+      </ul>
+      <p>The bill includes exceptions for "exigent" circumstances involving clear and extraordinary threats to public safety. It notes that such circumstances should be "rare" and defines what circumstances can be deemed "exigent." It also stipulates specific requirements for tracking and reporting, in writing, instances in which officers invoke exigent circumstances to perform enforcement actions at or near sensitive locations.</p>
+      <p>
+        <a href="https://www.clasp.org/protecting-sensitive-locations-act/" target="_blank" rel="noopener" style="color: var(--accent);">Read more about the bill here.</a>
+        Find the full list of current 
+        <a href="https://www.congress.gov/bill/119th-congress/house-bill/1061/cosponsors" target="_blank" rel="noopener" style="color: var(--accent);">House</a>
+        and
+        <a href="https://www.congress.gov/bill/119th-congress/senate-bill/455/text" target="_blank" rel="noopener" style="color: var(--accent);">Senate</a>
+        cosponsors.
+      </p>
     </div>
   </div>
 </section>
@@ -595,20 +268,21 @@ footer {
 <section id="litigation">
   <div class="section-inner">
     <p class="section-label">Legal Challenges</p>
-    <h2 class="section-title">Ongoing Court Cases</h2>
+    <h2 class="section-title">Ongoing Legal Challenges to the Rescission of Sensitive Locations Guidance</h2>
     <div class="section-body">
-      <p>The rescission of sensitive locations guidance has prompted legal challenges from civil liberties organizations, faith communities, and state attorneys general. Courts have been asked to determine whether enforcement actions at houses of worship violate First Amendment free exercise protections, and whether the absence of any formal process for reviewing the policy change constitutes a violation of the Administrative Procedure Act.</p>
-      <div class="two-col">
-        <div>
-          <p style="font-weight:500; margin-bottom:0.5rem;">First Amendment Claims</p>
-          <p>Several lawsuits argue that ICE enforcement at or near churches substantially burdens the free exercise of religion, as documented attendance declines demonstrate that parishioners are deterred from worship by fear of arrest.</p>
-        </div>
-        <div>
-          <p style="font-weight:500; margin-bottom:0.5rem;">APA Challenges</p>
-          <p>Administrative Procedure Act challenges argue that the rescission of longstanding agency guidance without notice-and-comment rulemaking was arbitrary, capricious, and procedurally deficient.</p>
-        </div>
-      </div>
-      <p class="placeholder-notice">✎ This section is a placeholder. Add case names, docket numbers, rulings, and current status for each active legal challenge.</p>
+      <p>There have been several separate lawsuits challenging the Trump administration's rescission of sensitive locations protections. Two separate courts have now ruled to temporarily block components of the administration's policy that allows immigration enforcement free rein to conduct raids at and around certain houses of worship.</p>
+
+      <p style="margin-top: 2rem; font-weight: 700; font-size: 1rem;">1. <em>Philadelphia Yearly Meeting of the Religious Society of Friends v. DHS</em> (D. Md. No. 8:25-cv-00243)</p>
+      <p>On January 27, a coalition of religious groups alleged violations of the First Amendment, the Religious Freedom Restoration Act, and the Administrative Procedures Act.</p>
+      <p>On February 24, 2025, the district court issued a preliminary injunction in the case blocking immigration officials from entering certain houses of worship to conduct immigration enforcement operations. The court <a href="https://democracyforward.org/work/legal/religious-groups-sue-trump-administration-over-ice-enforcement-in-houses-of-worship/" target="_blank" rel="noopener" style="color: var(--accent);">ruled</a> that plaintiffs likely had standing due to decreased attendance at worship services and social ministries.</p>
+      <p>The government has appealed and the case is ongoing. Find the latest filings <a href="https://www.courtlistener.com/docket/69580474/philadelphia-yearly-meeting-of-the-religious-society-of-friends-v-us/" target="_blank" rel="noopener" style="color: var(--accent);">here</a>.</p>
+
+      <p style="margin-top: 2rem; font-weight: 700; font-size: 1rem;">2. <em>New England Synod, ELCA v. DHS</em> (D. Mass., No. 4:25-cv-40102)</p>
+      <p>On July 28, 2025, several additional religious groups including multiple ELCA synods brought a suit against arrests at sensitive locations.</p>
+      <p>On February 13, 2026, a district judge ruled in the case to block the administration from immigration enforcement actions at or within 100 feet of certain places of worship. The place of worship must be regularly used by one of the named plaintiffs in the suit in order to be protected.</p>
+      <p>This case too is ongoing and the latest filings can be found <a href="https://www.courtlistener.com/docket/70939776/new-england-synod-evangelical-lutheran-church-in-america-v-department-of/" target="_blank" rel="noopener" style="color: var(--accent);">here</a>.</p>
+
+      <p style="margin-top: 1.5rem;">While these are vital steps toward protecting some religious sites, they are limited in reach and impact. Far more action and advocacy is needed to safeguard sensitive locations from ICE infringement.</p>
     </div>
   </div>
 </section>
@@ -616,14 +290,18 @@ footer {
 <!-- CHILLING EFFECT -->
 <section id="chilling" style="background: var(--paper-2);">
   <div class="section-inner">
-    <p class="section-label">Public Health & Civil Liberties</p>
+    <p class="section-label">Public Health &amp; Civil Liberties</p>
     <h2 class="section-title">The Chilling Effect</h2>
     <div class="section-body">
-      <p>Research consistently shows that immigration enforcement in or near sensitive locations produces documented declines in utilization of essential services — not only among undocumented individuals, but among mixed-status families and legal residents who fear proximity to enforcement actions.</p>
-      <div class="pullquote">"Attendance cut by half due to fear of being detained."<br><span style="font-size:0.8rem; font-style:normal; color: var(--ink-3);">— St. Gabriel the Archangel Catholic Church, Hopkins MN, January 2026</span></div>
-      <p>The consequences extend beyond the individuals directly affected: when parents fear sending children to school, school attendance falls. When patients avoid hospitals, conditions go untreated. When parishioners stop attending services, community bonds fracture. When witnesses and crime victims avoid courthouses, the justice system is undermined.</p>
-      <p>Researchers at public health institutions have documented measurable declines in prenatal care visits, emergency room utilization, and school enrollment in counties following high-profile immigration enforcement actions. These effects are not limited to the targets of enforcement — they extend to any community member who might be perceived as a potential enforcement target.</p>
-      <p class="placeholder-notice">✎ This section is a placeholder. Add citations, studies, and specific data on documented chilling effects, including school attendance data, hospital utilization, and community impact reports.</p>
+      <p>This tracker documents specific instances of ICE enforcement at sensitive locations, but the true and devastating impact and harms of the rescinded guidance are impossible to capture on a map or an incident tracker.</p>
+      <p>A shared understanding that certain locations are and will be protected from immigration enforcement has been shattered. Religious sites, schools, hospitals, courthouses, and other locations crucial to communities across the country have seen attendance plummet. Just a few examples:</p>
+
+      <p style="margin-top: 1.5rem;"><strong>Schools:</strong> Denver Public Schools documented in court that there has been a "noticeable decrease in school attendance across all schools" and an 85% attendance drop in certain areas on 'raid days.'</p>
+      <p><strong>Houses of worship:</strong> Testimony in several of the lawsuits demonstrates how widespread declines in attendance have been since early 2025. One congregation in Milwaukee reported a 50% decline in attendance, and a church-run diaper pantry saw participation fall from 300 families to 100.</p>
+      <p><strong>Medical settings:</strong> Healthcare providers have reported parents concerned about taking kids to the ER, pregnant women who skip prenatal care, and others deferring critical care out of fear across the country.</p>
+      <p><strong>Courthouses:</strong> Immigrants trying to follow the law and attend their scheduled court hearings are now forced to consider whether they will be arrested and detained without due process.</p>
+
+      <p style="margin-top: 1.5rem;">As a judge wrote in one of the sensitive locations cases, "there are many other means by which to enforce the nation's immigration laws" than conducting actions in locations like these.</p>
     </div>
   </div>
 </section>
@@ -632,11 +310,10 @@ footer {
 <section id="about">
   <div class="section-inner">
     <p class="section-label">About This Project</p>
-    <h2 class="section-title">Methodology & Sources</h2>
+    <h2 class="section-title">Methodology &amp; Sources</h2>
     <div class="section-body">
-      <p>This database documents ICE enforcement actions at or near locations historically protected under the sensitive locations guidance, drawing on news reports, court filings, government data obtained via FOIA requests, and accounts from advocacy organizations. Each incident includes at minimum one sourced news report or official record.</p>
-      <p>We define "sensitive location" according to the rescinded ICE guidance, which covered: schools and colleges, medical facilities, places of worship, social service establishments, and institutions providing assistance to children, pregnant women, or the elderly. Courthouses have been separately identified as sensitive by standing DOJ policy.</p>
-      <p>This is a living database. If you have documentation of an incident not included here, contact us at <a href="mailto:tips@protectsensitivelocations.org" style="color: var(--accent);">tips@protectsensitivelocations.org</a>.</p>
+      <p>This database documents ICE and Border Patrol enforcement actions at or near sensitive locations, drawing on news reports, court filings, government data, and accounts from advocacy organizations and faith leaders.</p>
+      <p>This is a living database. If you have documentation of an incident not included here, please share via <a href="https://forms.gle/R4Aaen7snX4pNfNz6" target="_blank" rel="noopener" style="color: var(--accent);">this form</a>.</p>
     </div>
   </div>
 </section>
@@ -645,7 +322,7 @@ footer {
   <div class="footer-inner">
     <div>
       <p class="footer-brand">Protect Sensitive Locations</p>
-      <p class="footer-note">A documentation project tracking ICE enforcement actions at churches, schools, hospitals, and courthouses since the rescission of sensitive location guidance in January 2025.</p>
+      <p class="footer-note">A documentation project tracking ICE and Border Patrol enforcement actions at churches, schools, hospitals, and courthouses since the rescission of sensitive location guidance on January 20, 2025.</p>
     </div>
     <div class="footer-links">
       <a href="#tracker-section">Incident Database</a>
@@ -653,216 +330,221 @@ footer {
       <a href="#legislation">Legislation</a>
       <a href="#litigation">Legal Challenges</a>
       <a href="#chilling">Chilling Effect</a>
-      <a href="mailto:tips@protectsensitivelocations.org">Submit a Tip</a>
+      <a href="https://forms.gle/R4Aaen7snX4pNfNz6" target="_blank" rel="noopener">Submit a Tip</a>
     </div>
   </div>
   <div class="last-updated" id="footer-updated">Data updated regularly. All incidents sourced from public records and news reports.</div>
 </footer>
 
 <script>
-// ── DATA (embedded from Google Sheet) ─────────────────────────────────────────
-// To update: replace this array with new rows from your sheet.
-// Column order: [date, name, city, state, description, type, source, lat, lon]
+// Helper: is a string a real URL?
+function isURL(s) { return s && (s.startsWith('http://') || s.startsWith('https://')); }
+
+// Helper: truncate long descriptions
+function truncate(s, max) {
+  if (!s || s.length <= max) return s;
+  return s.slice(0, max).replace(/\s+\S*$/, '') + '…';
+}
+
+// Helper: clean source display domain
+function srcDomain(url) {
+  try { return new URL(url).hostname.replace('www.',''); } catch(e) { return 'source'; }
+}
+
+// ── DATA ─────────────────────────────────────────────────────────────────────
+// [date, name, city, state, description, type, source, lat, lon]
 const RAW = [
   ["2026-01-29","North Hills UMC","Los Angeles","CA","A volunteer who was serving food in the congregation's parking lot was abducted in broad daylight.","Religious Site","https://www.cbsnews.com/losangeles/news/methodist-church-in-los-angeles-says-ice-arrested-member-during-a-food-distribution-event/",34.23268,-118.46896],
-  ["2026-02-27","San Diego Federal Building","San Diego","CA","Volunteer immigration court observers were kicked out of San Diego's federal building and some were detained and issued a citation.","Court House","https://www.nbcsandiego.com/news/local/san-diego-immigration-court-volunteers-detained-cited/",32.71754,-117.16594],
-  ["2026-01-04","St. Gabriel the Archangel Catholic Church","Hopkins","MN","ICE surveilled the church during Mass, impeding parishioners' free exercise of religion. Attendance cut by half due to fear of being detained.","Religious Site","https://www.startribune.com/ice-deported-minnesota-church-employee-surveilled-parish-during-mass-mayor-says/",44.93026,-93.41789],
-  ["2025-12-02","Staten Island Food Pantries","Staten Island","NY","ICE presence near Staten Island food pantries prompted community leaders to coordinate response and warn vulnerable residents.","Food Pantry","https://www.silive.com/news/2025/12/ice-presence-near-staten-island-food-pantries.html",40.5795,-74.1502],
-  ["2025-11-18","Good Shepherd Church","Charlotte","NC","Border Patrol arrest outside church caught on video.","Religious Site","https://www.wcnc.com/article/news/local/border-patrol-arrest-outside-church-charlotte/",35.11637,-80.96358],
-  ["2025-11-15","Iglesia Pentecostal Casa de Dios","Charlotte","NC","About 20 members of the church were doing yard work when ICE arrived. Agents took one man away whose wife and child were inside the church and attempted to arrest others.","Religious Site","https://www.wcnc.com/article/news/local/church-members-flee-federal-agents-east-charlotte/",35.2047,-80.75748],
-  ["2025-10-13","Coalition for Spiritual and Public Leadership","Broadview","IL","Faith leaders came to the Broadview ICE facility to give communion and were denied entry. Leaders expressed dismay at being prevented from allowing detainees to receive the Eucharist.","Facility","https://www.cbsnews.com/chicago/news/religious-leaders-offering-communion-to-detainees-turned-away-at-broadview-ice-facility/",41.85777,-87.63582],
-  ["2025-09-16","UCLA Emergency Room","Los Angeles","CA","An ICE agent — wearing a mask, sunglasses and hat without any clear identification — brought a woman in custody to the hospital and blocked nursing staff from assessing the patient.","Hospital/Medical","https://www.theguardian.com/us-news/2025/sep/16/california-nurses-ice-presence-hospitals",34.06822,-118.4464],
-  ["2025-08-29","DC Black Congregations","Washington","DC","ICE and federal enforcement drove into church parking lots, not detaining people, but creating widespread fear among congregants.","Religious Site","https://www.christianitytoday.com/2025/08/dc-churches-trump-stay-out-of-our-parking-lots/",38.90957,-77.02122],
-  ["2025-08-28","Saint Anthony Church","Falls Church","VA","The pastor of St. Anthony's Church confirmed that 5 people were taken from his church.","Religious Site","",38.85636,-77.13766],
+  ["2026-02-27","San Diego Federal Building","San Diego","CA","Volunteer immigration court observers were kicked out of San Diego's federal building Thursday and Friday, with some being detained and issued a citation.","Court House","",32.71754,-117.16594],
+  ["2026-01-04","St. Gabriel the Archangel Catholic Church","Hopkins","MN","ICE surveilled the Church during Mass, impeding parishioners' free exercise of religion, as people are now afraid to attend church. Attendance cut by half due to fear of being detained.","Religious Site","",44.93026,-93.41789],
+  ["2025-12-02","Staten Island Food Pantry","Staten Island","NY","","Food Pantry","",40.6132,-74.1496],
+  ["2025-11-18","Good Shepherd Church","Charlotte","NC","","Religious Site","",35.11637,-80.96358],
+  ["2025-11-15","Iglesia Pentecostal Casa de Dios","Charlotte","NC","About 20 members of the church were doing yard work when ICE arrived. Agents took one man away whose wife and child were inside the church and attempted to arrest others.","Religious Site","",35.2047,-80.75748],
+  ["2025-09-16","UCLA Emergency Room","Los Angeles","CA","An ICE agent — wearing a mask, sunglasses and hat without any clear identification — brought a woman already in custody to the hospital. The patient was screaming and trying to get off the gurney, and when a nurse tried to assess her, the agent blocked her and told her not to touch the patient.","Hospital/Medical Services","https://www.theguardian.com/us-news/2025/sep/16/california-nurses-ice-presence-hospitals",34.06822,-118.4464],
+  ["2025-08-29","DC Black Congregations","Washington","DC","ICE and Federal Enforcement driving into church parking lots, not detaining people, but creating fear.","Religious Site","https://www.christianitytoday.com/2025/08/dc-churches-trump-stay-out-of-our-parking-lots/",38.90957,-77.02122],
+  ["2025-08-28","Saint Anthony Church","Falls Church","VA","The pastor of St. Anthony's Church in Falls Church confirmed that 5 people were taken from his church.","Religious Site","",38.85636,-77.13766],
   ["2025-08-13","Restoration Church","South Portland","ME","Pastor of the church detained after previously calling a friend saying that he was being followed home from work at the church.","Religious Site","https://www.pressherald.com/2025/08/13/pastor-who-founded-maine-church-detained-by-ice/",43.63474,-70.22744],
-  ["2025-07-31","Community Bible Church","Jackson","WY","Man detained by ICE in church parking lot after living in the community for 26 years.","Religious Site","https://www.buckrail.com/man-living-in-community-for-26-years-detained-by-ice-in-church-parking-lot/",43.46065,-110.813],
-  ["2025-06-15","St. Michael's Episcopal Church","Newburg","OR","ICE detains man outside of church, sparking community fear.","Religious Site","https://www.kgw.com/article/news/local/ice-detains-oregon-man-outside-church/",45.30698,-122.96557],
-  ["2025-06-11","Downey Memorial Church","Downey","CA","ICE agents in parking lot were confronted by pastors but still made an arrest.","Religious Site","https://www.downeypatch.com/news/downey-pastor-recounts-takedown-of-man-by-immigration-officers-on-church-property/",33.95087,-118.12253],
-  ["2025-06-11","Our Lady of Perpetual Help Church","Downey","CA","Immigration sweeps reached additional Downey churches.","Religious Site","https://www.thedowneypatriot.com/articles/tensions-high-as-immigration-sweeps-reach-downey-churches",33.94464,-118.13045],
-  ["2025-05-28","Central United Methodist Church","Charlotte","NC","ICE agents engaged in immigration enforcement multiple times outside of church during preschool pickup time.","Religious Site","https://www.wcnc.com/article/news/local/methodist-church-ice-agents-preschool-pickup-5-28-2025/",35.21381,-80.74483],
-  ["2025-03-18","Welcome House Refugee Ministry","Raleigh","NC","Immigration agents show up at CBF ministry despite a court injunction.","Religious Site","https://baptistnews.com/article/despite-court-injunction-immigration-agents-show-up-at-cbf-ministry/",35.87681,-78.62444],
-  ["2025-03-06","Christ Fellowship","Everson","WA","Family torn apart after father was arrested outside of church and deported.","Religious Site","https://www.kuow.org/stories/washington-family-torn-apart-after-father-arrested-outside-of-church-and-deported",48.91982,-122.3225],
-  ["2025-01-26","Fuente de Vida Church","Tucker","GA","Man's ankle bracelet rang in church and he went outside where ICE was waiting.","Religious Site","https://www.ajc.com/news/report-ice-makes-arrests-in-dekalb-pastor-says-agents-arrested-parishioner/",34.06966,-83.43097],
-  ["2025-09-05","Brentwood High School","Brentwood","NY","ICE officials posted near a Long Island high school on the first day of classes, inciting fear in teachers, parents, and students.","School","https://abc7ny.com/masked-ice-agents-spotted-near-a-long-island-high-school-spark-fears-among-parents-students/",41.28099,-73.19685],
-  ["2025-12-15","New York City Shelter","New York City","NY","Seven federal agents in camouflage gear went into a Brooklyn shelter and arrested a 30-year-old Venezuelan resident who had no prior criminal record, according to his attorney.","Essential Services","https://gothamist.com/news/ice-enters-nyc-shelters-armed-and-without-judicial-warrants-reports-show",40.77038,-73.97353],
-  ["2025-10-17","New York City Migrant Shelter","New York City","NY","Two men were arrested at a Midtown migrant shelter upon suspicion of gang affiliation. The city has been leasing the facility to house migrants since 2022.","Essential Services","https://gothamist.com/news/two-men-arrested-by-federal-agents-outside-midtown-migrant-shelter",40.68115,-73.9493],
-  ["2025-08-11","Stamford Court House","Stamford","CT","Two men arrested at a courthouse. ICE agents stormed a court bathroom and sprayed the men with pepper spray before making the arrest.","Court House","https://www.ctpublic.org/news/2025-08-11/immigration-enforcement-officers-arrest-two-men-inside-stamford-courthouse",41.05728,-73.54156],
-  ["2025-04-07","Lillian Street Elementary School","Los Angeles","CA","ICE activity on school grounds, reported among multiple LA-area schools on the same date.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",33.98652,-118.24058],
-  ["2025-04-07","Russell Elementary School","Los Angeles","CA","ICE activity on school grounds, reported among multiple LA-area schools.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",33.96053,-118.25179],
-  ["2025-06-17","Ruben Salazar High School","Los Angeles","CA","ICE activity on school grounds.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",33.9881,-118.09052],
-  ["2025-07-15","Guidepost Montessori School","Portland","OR","ICE activity on school grounds.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.53535,-122.66196],
-  ["2025-10-16","Thomas Kelly College Prep","Chicago","IL","ICE activity on school grounds.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",41.81831,-87.69476],
-  ["2025-08-11","Arleta High School","Los Angeles","CA","ICE activity on school grounds.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",34.25036,-118.4417],
-  ["2025-11-05","Rayito de Sol Spanish Immersion Early Learning Center","Chicago","IL","ICE activity at early learning center.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",41.8781,-87.6298],
-  ["2026-01-07","Roosevelt High School","Minneapolis","MN","ICE activity at high school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",44.92972,-93.22997],
-  ["2026-01-12","Concord Education Center","Minneapolis","MN","ICE activity at education center.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",44.81854,-93.04648],
-  ["2026-01-21","Anpetu Teca Education Center","Minneapolis","MN","ICE activity at education center.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.00576,-93.18065],
-  ["2026-01-21","Little Canada Elementary School","Minneapolis","MN","ICE activity near elementary school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.02516,-93.0831],
-  ["2026-01-21","Columbia Heights High School","Minneapolis","MN","ICE activity at high school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.05637,-93.23991],
-  ["2026-01-31","Fridley School Parking Lots","Minneapolis","MN","ICE activity near school parking lots.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.08556,-93.26351],
-  ["2025-05-30","Van Nuys Immigration Court","Van Nuys","CA","A Colombian family's asylum hearing was dismissed, then the father was immediately surrounded by plainclothes agents and detained as they exited the courtroom.","Court House","https://www.nytimes.com/2025/05/30/us/politics/ice-courthouse-arrests.html",34.20213,-118.46549],
-  ["2025-05-30","Lower Manhattan Federal Courthouse","New York City","NY","ICE officers wearing face masks waited by courthouse elevators seeking migrants. Outside, protesters tried to block vans carrying detained migrants, leading to 23 arrests.","Court House","https://www.nytimes.com/2025/05/30/us/politics/ice-courthouse-arrests.html",40.72208,-74.00012],
-  ["2025-05-30","Phoenix Courthouse","Phoenix","AZ","ICE officers ambushed an immigration lawyer and his two Cuban clients with pending asylum claims as they left the courthouse after their cases were dismissed.","Court House","https://www.nytimes.com/2025/05/30/us/politics/ice-courthouse-arrests.html",33.4497,-112.0747]
+  ["2025-07-31","Community Bible Church","Jackson","WY","Man detained by ICE in church parking lot.","Religious Site","",43.46065,-110.813],
+  ["2025-06-15","St. Michael's Episcopal Church","Newburg","OR","ICE detains man outside of church.","Religious Site","",45.30698,-122.96557],
+  ["2025-06-11","Downey Memorial Church","Downey","CA","ICE in parking lot, confronted by pastors, still made arrest.","Religious Site","",33.95087,-118.12253],
+  ["2025-06-11","Our Lady of Perpetual Help Church","Downey","CA","Immigration sweeps of additional Downey churches.","Religious Site","https://www.thedowneypatriot.com/articles/tensions-high-as-immigration-sweeps-reach-downey-churches",33.94464,-118.13045],
+  ["2025-05-28","Central United Methodist Church","Charlotte","NC","ICE agents engage in immigration enforcement multiple times outside of church during preschool pick up time.","Religious Site","https://www.wcnc.com/article/news/local/methodist-church-ice-agents-preschool-pickup-5-28-2025/275-0da22fdc-b8c4-45ac-8219-d6bb03b5a9ea",35.21381,-80.74483],
+  ["2025-03-18","Welcome House Refugee Ministry","Raleigh","NC","Immigration agents show up at CBF ministry.","Religious Site","https://baptistnews.com/article/despite-court-injunction-immigration-agents-show-up-at-cbf-ministry/",35.87681,-78.62444],
+  ["2025-03-06","Christ Fellowship","Everson","WA","Family torn apart after father arrested outside of church and deported.","Religious Site","https://www.kuow.org/stories/washington-family-torn-apart-after-father-arrested-outside-of-church-and-deported",48.91982,-122.3225],
+  ["2025-01-26","Fuente de Vida Church","Tucker","GA","Man's ankle bracelet rang in church and he went outside where ICE was waiting.","Religious Site","",34.06966,-83.43097],
+  ["2025-09-05","Brentwood High School","Brentwood","NY","ICE officials posted near a Long Island High School on the first day of classes, inciting fear in teachers, parents, and students. Questions raised about whether fear would affect attendance.","School","https://abc7ny.com/masked-ice-agents-spotted-near-a-long-island-high-school-spark-fears-among-parents-students/",41.28099,-73.19685],
+  ["2025-12-15","New York City Shelter","New York City","NY","Seven federal agents — wearing face masks, camouflage gear, and bulletproof vests, and carrying firearms — went into a Brooklyn shelter and arrested a 30-year-old Venezuelan resident who had no prior criminal record, according to his attorney.","Essential Services","https://gothamist.com/news/ice-enters-nyc-shelters-armed-and-without-judicial-warrants-reports-show",40.77038,-73.97353],
+  ["2025-10-17","New York City Migrant Shelter","New York City","NY","Two men were arrested upon suspicion of belonging to the Venezuelan gang Tren de Agua. The city has been leasing this facility to house migrants since 2022.","Essential Services","https://gothamist.com/news/two-men-arrested-by-federal-agents-outside-midtown-migrant-shelter",40.68115,-73.9493],
+  ["2025-08-11","Stamford Court House","Stamford","CT","Two men arrested at a courthouse. ICE agents stormed a court bathroom and sprayed the men with pepper spray before making the arrest. ICE has not responded to requests for comment.","Court House","https://www.ctpublic.org/news/2025-08-11/immigration-enforcement-officers-arrest-two-men-inside-stamford-courthouse",41.05728,-73.54156],
+  ["2025-04-07","Lillian Street Elementary School","Los Angeles","CA","ICE present at elementary school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",33.98652,-118.24058],
+  ["2025-04-07","Russell Elementary School","Los Angeles","CA","ICE present at elementary school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",33.96053,-118.25179],
+  ["2025-06-17","Ruben Salazar High School","Los Angeles","CA","ICE present at high school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",33.9881,-118.09052],
+  ["2025-07-15","Guidepost Montessori School","Portland","OR","ICE present at Montessori school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.53535,-122.66196],
+  ["2025-10-16","Thomas Kelly College Prep","Chicago","IL","ICE present at preparatory school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",41.81831,-87.69476],
+  ["2025-08-11","Arleta High School","Los Angeles","CA","ICE present at high school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",34.25036,-118.4417],
+  ["2025-11-05","Rayito de Sol Spanish Immersion Early Learning Center","Chicago","IL","ICE present at early learning center.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",41.8781,-87.6298],
+  ["2026-01-07","Roosevelt High School","Minneapolis","MN","ICE present at high school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",44.92972,-93.22997],
+  ["2026-01-12","Concord Education Center","Minneapolis","MN","ICE present at education center.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",44.81854,-93.04648],
+  ["2026-01-21","Anpetu Teca Education Center","Minneapolis","MN","ICE present at education center.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.00576,-93.18065],
+  ["2026-01-21","Little Canada Elementary School","Minneapolis","MN","ICE present at elementary school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.02516,-93.0831],
+  ["2026-01-21","Columbia Heights High School","Minneapolis","MN","ICE present at high school.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.05637,-93.23991],
+  ["2026-01-31","Fridley School Parking Lots","Minneapolis","MN","ICE present outside school parking lots.","School","https://www.k12dive.com/news/ice-activity-on-k-12-school-grounds/810648/",45.08556,-93.26351],
+  ["2025-05-30","Van Nuys Immigration Court","Van Nuys","CA","A hearing at immigration court in Van Nuys was supposed to be routine for a young family from Colombia seeking asylum. To their surprise, the judge dismissed the father's case. Moments later, as they exited the courtroom, he was encircled by plainclothes federal agents who ushered him into a side room. Other agents guided his shaken wife and their toddler toward the elevator.","Court House","https://www.nytimes.com/2025/05/30/us/politics/ice-courthouse-arrests.html",34.20213,-118.46549],
+  ["2025-05-30","Lower Manhattan Federal Courthouse","New York City","NY","ICE officers wearing face masks and carrying photographs of migrants they were seeking to arrest waited by the elevators of the courthouses in Lower Manhattan. Outside, protesters tried to block vans carrying detained migrants, leading to the arrests of 23 people.","Court House","https://www.nytimes.com/2025/05/30/us/politics/ice-courthouse-arrests.html",40.72208,-74.00012],
+  ["2025-05-30","Phoenix Courthouse","Phoenix","AZ","ICE officers ambushed an immigration lawyer and his two Cuban clients with pending asylum claims as they left the courthouse after a judge granted the government's request to dismiss their cases.","Court House","https://www.nytimes.com/2025/05/30/us/politics/ice-courthouse-arrests.html",33.4497,-112.0747],
+  ["2026-01-26","Douglas County Court House","Omaha","NE","ICE arrests four people at the Douglas County Court House.","Court House","https://www.wowt.com/2026/01/27/ice-arrests-four-douglas-county-courthouse-before-hearings/",41.25707,-95.93917],
+  ["2025-08-06","Camarena Elementary School","Chula Vista","CA","ICE arrests South Korean mother outside school as families drop off students.","School","https://www.kpbs.org/news/border-immigration/2025/08/08/what-we-know-about-ice-arrest-of-a-parent-outside-a-chula-vista-elementary-school",32.62261,-116.9585],
+  ["2025-08-14","Linda Vista Elementary School","San Diego","CA","ICE arrests father near elementary school while he was waiting to pick up his child.","School","https://www.kpbs.org/news/border-immigration/2025/08/15/san-diego-unified-responds-to-ice-arrest-outside-linda-vista-elementary",32.79341,-117.17329],
+  ["2025-08-20","Park Dale Lane Elementary","Encinitas","CA","Armed agents arrested a father outside an elementary school while his young daughter watched.","School","https://timesofsandiego.com/politics/2025/08/20/encinitas-elementary-school-ice-arrest/",33.04708,-117.24228],
+  ["2025-06-01","Laurel Elementary","Oceanside","CA","ICE arrests both parents outside school during student drop off.","School","https://inewsource.org/2025/08/06/san-diego-ice-school-arrest-immigration-chula-vista/",33.20818,-117.37369],
+  ["2025-10-08","Chicago World Language Academy","Chicago","IL","Two DACA recipient sisters were pulled from their vehicle near the school.","School","https://ca.news.yahoo.com/examining-claim-video-shows-ice-230000196.html",41.87501,-87.66124],
+  ["2025-10-08","Lincoln Elementary","Oak Park","IL","Attorney arrested by ICE outside his child's elementary school.","School","https://www.oakpark.com/2025/10/21/oak-park-attorney-detained-by-ice-outside-elementary-school/",41.86835,-87.79537],
+  ["2025-12-17","Pinehurst Elementary","Salisbury","MD","ICE arrested mother just after she dropped off her daughter at school.","School","https://www.wmdt.com/2025/12/exclusive-ice-arrest-outside-of-pinehurst-elementary-sparks-backlash/",38.35121,-75.61364],
+  ["2026-01-01","Aquila Elementary School","St. Louis Park","MN","ICE presence reported at the school and across the street.","School","https://sahanjournal.com/education/saint-louis-park-aquila-elementary-ice-presence/",44.94786,-93.38655],
+  ["2026-02-15","Iglesia Cristiana Dios de Amor","Union City","NJ","ICE arrests two active church members just outside the church.","Religious Site","https://abc7ny.com/post/nj-leaders-community-concerned-ice-agents-arrest-2-outside-church-union-city/18608621/",40.76426,-74.03407],
+  ["2025-11-01","Our Lady of Guadalupe Catholic Church","Charlotte","NC","Church reduced all activities other than Mass after DHS agents visited grounds over the weekend.","Religious Site","https://www.ncronline.org/news/ice-descends-charlotte-faith-leaders-draw-other-cities-actions-aid-immigrants",35.24722,-80.92982],
+  ["2025-07-01","Glendale Memorial Hospital","Glendale","CA","Federal agents sat guard in the hospital lobby for two weeks after a detainee had a medical emergency.","Hospital/Medical Services","https://kffhealthnews.org/news/article/ice-immigrants-hospitals-detained-california-privacy-rights/",34.12826,-118.2571],
+  ["2025-08-01","NIH Clinical Center","Bethesda","MD","ICE detained a woman seeking medical care at the hospital.","Hospital/Medical Services","https://www.washingtonpost.com/health/2025/08/08/nih-clinical-center-ice-arrest/",39.00209,-77.10445],
+  ["2025-07-29","John Muir Medical Center","Concord","CA","ICE shows up at California hospital with no clarity about rules or potential impact on staff.","Hospital/Medical Services","https://calmatters.org/health/2025/08/immigration-hospitals-workers-fear/",37.98353,-122.03357],
+  ["2026-01-08","Hennepin County Medical Center","Minneapolis","MN","Individual hospitalized after ICE arrest; agents refuse to leave hospital. Separate reports note ICE agents entering hospital to conduct arrests.","Hospital/Medical Services","https://www.cbsnews.com/minnesota/news/hcmc-hennepin-healthcare-ice-patient-handcuffed/",44.88681,-93.28851],
+  ["2025-03-27","Boston Municipal Court","Boston","MA","Defendant immediately arrested by ICE before end of trial.","Court House","https://www.cnn.com/2025/05/06/us/ice-courthouse-arrests-public-safety",42.36322,-71.06156],
+  ["2025-05-01","Hyattsville Immigration Court","Hyattsville","MD","Migrant arrested in the hallway of the courthouse.","Court House","https://www.cnn.com/2025/06/02/politics/ice-arrests-migrants-courthouse",38.9697,-76.95157],
+  ["2025-05-01","Baltimore Immigration Court","Baltimore","MD","Migrant with no criminal record arrested outside Baltimore Immigration Court.","Court House","https://www.cnn.com/2025/06/02/politics/ice-arrests-migrants-courthouse",39.28826,-76.61686],
+  ["2025-05-01","Minnesota Immigration Court","Fort Snelling","MN","Individual arrested steps outside his first immigration court hearing.","Court House","https://www.npr.org/2025/06/12/nx-s1-5409403/trump-immigration-courts-arrests",44.89404,-93.19566],
+  ["2025-11-06","San Francisco Immigration Court","San Francisco","CA","One asylum seeker detained.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-10-02","San Francisco Immigration Court","San Francisco","CA","Five asylum seekers detained.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-09-26","San Francisco Immigration Court","San Francisco","CA","Seven people arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-09-19","San Francisco Immigration Court","San Francisco","CA","Five asylum seekers arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-09-18","San Francisco Immigration Court","San Francisco","CA","Seven people were arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-09-12","San Francisco Immigration Court","San Francisco","CA","Eight people were arrested — the largest single-court arrest in S.F.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-09-05","San Francisco Immigration Court","San Francisco","CA","Three people were arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-09-04","San Francisco Immigration Court","San Francisco","CA","Five asylum seekers were arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-08-28","San Francisco Immigration Court","San Francisco","CA","Seven people were arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-08-28","San Francisco Immigration Court","San Francisco","CA","Six people were arrested after court.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-08-20","San Francisco Immigration Court","San Francisco","CA","One person was arrested; ICE agents pepper-sprayed protesters trying to stop the arrest.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-07-30","San Francisco Immigration Court","San Francisco","CA","Every single adult in court without a child was arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-07-30","San Francisco Immigration Court","San Francisco","CA","A Peruvian asylum seeker was detained by ICE at a check-in.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-07-30","San Francisco Immigration Court","San Francisco","CA","Three people were arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-07-24","San Francisco Immigration Court","San Francisco","CA","Three people were arrested when leaving routine court hearings, including a man a judge had said could be mentally impaired.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-07-08","San Francisco Immigration Court","San Francisco","CA","At least one person was arrested as ICE clashed with protesters.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-07-07","San Francisco Immigration Court","San Francisco","CA","Two people were arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-07-02","San Francisco Immigration Court","San Francisco","CA","Two people were arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-06-25","San Francisco Immigration Court","San Francisco","CA","Two people were detained.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-06-10","San Francisco Immigration Court","San Francisco","CA","At least four people were arrested.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-05-27","San Francisco Immigration Court","San Francisco","CA","At least four people were detained.","Court House","https://missionlocal.org/2025/06/sf-ice-arrests-tracker/",37.79044,-122.40197],
+  ["2025-11-21","East Boston District Court","East Boston","MA","ICE shackles migrant in immigration court.","Court House","https://www.wbur.org/news/2025/12/16/ice-courthouses-arrest-massachusetts",42.37111,-71.03885],
+  ["2025-09-01","Lynn District Court","Lynn","MA","Man detained after appearing for minor civil infraction.","Court House","https://www.wgbh.org/news/local/2026-03-17/there-were-over-600-ice-arrests-in-mass-courthouses-last-year-heres-where-they-occurred",42.46558,-70.94984],
+  ["2026-01-01","Hallie Q. Brown Community Center","St. Paul","MN","ICE detained a volunteer community food delivery driver.","Essential Services","https://www.twincities.com/2026/01/28/st-paul-activist-thao-xiong-taken-by-ice-at-hallie-q-brown-center/",44.94948,-93.12291]
 ];
 
-// ── TAG DISPLAY NAMES ──────────────────────────────────────────────────────────
 const TYPE_DISPLAY = {
   "Religious Site": "Religious Site",
   "Court House": "Courthouse",
   "School": "School",
-  "Hospital/Medical": "Hospital / Medical",
+  "Hospital/Medical Services": "Hospital / Medical",
   "Essential Services": "Essential Services",
   "Food Pantry": "Food Pantry",
   "Facility": "Detention Facility"
 };
-
 const TYPE_CLASS = {
   "Religious Site": "tag-Religious",
   "Court House": "tag-Court",
   "School": "tag-School",
-  "Hospital/Medical": "tag-Hospital",
+  "Hospital/Medical Services": "tag-Hospital",
   "Essential Services": "tag-Essential",
   "Food Pantry": "tag-Food",
   "Facility": "tag-Facility"
 };
+const DOT_COLORS = {
+  "Religious Site": "#1a4a6b","Court House": "#6b3a00","School": "#2d6a2d",
+  "Hospital/Medical Services": "#6b006b","Essential Services": "#00506b",
+  "Food Pantry": "#00506b","Facility": "#4a4a00"
+};
 
-// ── PARSE DATA ─────────────────────────────────────────────────────────────────
 const incidents = RAW.map(r => ({
-  date: r[0], name: r[1], city: r[2], state: r[3],
-  desc: r[4], type: r[5], source: r[6], lat: r[7], lon: r[8]
+  date:r[0],name:r[1],city:r[2],state:r[3],desc:r[4],type:r[5],source:r[6],lat:r[7],lon:r[8]
 })).filter(r => r.name);
 
-// ── STATS ──────────────────────────────────────────────────────────────────────
-const states = [...new Set(incidents.map(i => i.state))].filter(Boolean);
-const types  = [...new Set(incidents.map(i => i.type))].filter(Boolean);
-
+// Stats
+const states = [...new Set(incidents.map(i=>i.state))].filter(Boolean);
+const types  = [...new Set(incidents.map(i=>i.type))].filter(Boolean);
 document.getElementById('stat-total').textContent = incidents.length;
-document.getElementById('stat-states').textContent = states.length;
 document.getElementById('stat-types').textContent = types.length;
 document.getElementById('stat-updated').textContent = 'Apr 2026';
 document.getElementById('footer-updated').textContent =
   'Database last updated April 2026. ' + incidents.length + ' incidents documented. All sourced from public records and news reports.';
 
-// ── POPULATE FILTERS ───────────────────────────────────────────────────────────
+// Populate filters
 const stateSelect = document.getElementById('filter-state');
-[...states].sort().forEach(s => {
-  const o = document.createElement('option'); o.value = s; o.textContent = s;
-  stateSelect.appendChild(o);
-});
-
+[...states].sort().forEach(s => { const o=document.createElement('option');o.value=s;o.textContent=s;stateSelect.appendChild(o); });
 const typeSelect = document.getElementById('filter-type');
-[...types].sort().forEach(t => {
-  const o = document.createElement('option'); o.value = t; o.textContent = TYPE_DISPLAY[t] || t;
-  typeSelect.appendChild(o);
-});
+[...types].sort().forEach(t => { const o=document.createElement('option');o.value=t;o.textContent=TYPE_DISPLAY[t]||t;typeSelect.appendChild(o); });
 
-// ── MAP ────────────────────────────────────────────────────────────────────────
-const map = L.map('map', { scrollWheelZoom: false }).setView([38.5, -96], 4);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
-  maxZoom: 18
+// Map
+const map = L.map('map',{scrollWheelZoom:false}).setView([38.5,-96],4);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+  attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',maxZoom:18
 }).addTo(map);
-
-const DOT_COLORS = {
-  "Religious Site": "#1a4a6b",
-  "Court House": "#6b3a00",
-  "School": "#2d6a2d",
-  "Hospital/Medical": "#6b006b",
-  "Essential Services": "#00506b",
-  "Food Pantry": "#00506b",
-  "Facility": "#4a4a00"
-};
-
 incidents.forEach(inc => {
-  if (!inc.lat || !inc.lon) return;
+  if (!inc.lat || !inc.lon || isNaN(inc.lat) || isNaN(inc.lon)) return;
   const color = DOT_COLORS[inc.type] || '#b5320a';
-  const marker = L.circleMarker([inc.lat, inc.lon], {
-    radius: 7, fillColor: color, color: '#fff',
-    weight: 1.5, opacity: 1, fillOpacity: 0.85
-  }).addTo(map);
-
-  const dateStr = inc.date ? new Date(inc.date + 'T12:00:00').toLocaleDateString('en-US', {year:'numeric',month:'short',day:'numeric'}) : 'Date unknown';
-  marker.bindPopup(`
-    <div class="popup-loc">${inc.name}</div>
-    <div class="popup-meta">${inc.city}, ${inc.state} &middot; ${dateStr}</div>
-    <div class="popup-meta" style="margin-top:4px;">${TYPE_DISPLAY[inc.type] || inc.type}</div>
-  `);
+  const dateStr = inc.date ? new Date(inc.date+'T12:00:00').toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}) : 'Date unknown';
+  L.circleMarker([inc.lat,inc.lon],{radius:7,fillColor:color,color:'#fff',weight:1.5,opacity:1,fillOpacity:0.85})
+    .addTo(map)
+    .bindPopup(`<div class="popup-loc">${inc.name}</div><div class="popup-meta" style="font-size:0.75rem;color:#6b6b6b;">${inc.city}, ${inc.state} &middot; ${dateStr}<br>${TYPE_DISPLAY[inc.type]||inc.type}</div>`);
 });
 
-// ── RENDER CARDS ──────────────────────────────────────────────────────────────
+// Card rendering
 function formatDate(d) {
   if (!d) return 'Date unknown';
-  try {
-    return new Date(d + 'T12:00:00').toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
-  } catch(e) { return d; }
-}
-
-function getSourceLabel(url) {
-  if (!url || !url.startsWith('http')) return null;
-  try {
-    const host = new URL(url).hostname.replace('www.','');
-    return 'Source: ' + host + ' →';
-  } catch(e) { return 'Source →'; }
+  try { return new Date(d+'T12:00:00').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}); }
+  catch(e) { return d; }
 }
 
 function renderCards(data) {
   const grid = document.getElementById('cards-grid');
   const none = document.getElementById('no-results');
   document.getElementById('results-count').textContent = data.length + ' of ' + incidents.length + ' incidents';
-
-  if (!data.length) {
-    grid.innerHTML = '';
-    none.style.display = 'block';
-    return;
-  }
+  if (!data.length) { grid.innerHTML=''; none.style.display='block'; return; }
   none.style.display = 'none';
-
   grid.innerHTML = data.map(inc => {
     const tagClass = TYPE_CLASS[inc.type] || 'tag-Facility';
     const tagLabel = TYPE_DISPLAY[inc.type] || inc.type;
-    const srcLabel = getSourceLabel(inc.source);
-    return `
-      <div class="card">
-        <div class="card-header">
-          <span class="card-date">${formatDate(inc.date)}</span>
-          <span class="card-tag ${tagClass}">${tagLabel}</span>
-        </div>
-        <div class="card-location">${inc.name}</div>
-        <div class="card-place">${inc.city}, ${inc.state}</div>
-        ${inc.desc ? `<p class="card-desc">${inc.desc}</p>` : ''}
-        ${srcLabel && inc.source ? `<a class="card-source" href="${inc.source}" target="_blank" rel="noopener">${srcLabel}</a>` : ''}
+    const hasURL = isURL(inc.source);
+    const desc = inc.desc && inc.desc !== '`' ? inc.desc : '';
+    const displayDesc = desc.length > 280
+      ? truncate(desc, 240) + (hasURL ? ` <a href="${inc.source}" target="_blank" rel="noopener" style="color:var(--accent);">Read more →</a>` : '') 
+      : desc;
+    return `<div class="card">
+      <div class="card-header">
+        <span class="card-date">${formatDate(inc.date)}</span>
+        <span class="card-tag ${tagClass}">${tagLabel}</span>
       </div>
-    `;
+      <div class="card-location">${inc.name}</div>
+      <div class="card-place">${inc.city}, ${inc.state}</div>
+      ${displayDesc ? `<p class="card-desc">${displayDesc}</p>` : ''}
+      ${hasURL ? `<a class="card-source" href="${inc.source}" target="_blank" rel="noopener">Source: ${srcDomain(inc.source)} →</a>` : ''}
+    </div>`;
   }).join('');
 }
 
-// ── FILTER & SORT ──────────────────────────────────────────────────────────────
 function applyFilters() {
   const st = document.getElementById('filter-state').value;
   const ty = document.getElementById('filter-type').value;
   const so = document.getElementById('sort-by').value;
-
-  let data = incidents.filter(i =>
-    (!st || i.state === st) &&
-    (!ty || i.type === ty)
-  );
-
-  if (so === 'date-desc') data.sort((a,b) => (b.date||'').localeCompare(a.date||''));
-  else if (so === 'date-asc') data.sort((a,b) => (a.date||'').localeCompare(b.date||''));
-  else if (so === 'state') data.sort((a,b) => a.state.localeCompare(b.state));
-  else if (so === 'type') data.sort((a,b) => a.type.localeCompare(b.type));
-
+  let data = incidents.filter(i => (!st||i.state===st) && (!ty||i.type===ty));
+  if (so==='date-desc') data.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  else if (so==='date-asc') data.sort((a,b)=>(a.date||'').localeCompare(b.date||''));
+  else if (so==='state') data.sort((a,b)=>a.state.localeCompare(b.state));
+  else if (so==='type') data.sort((a,b)=>a.type.localeCompare(b.type));
   renderCards(data);
 }
-
 function resetFilters() {
-  document.getElementById('filter-state').value = '';
-  document.getElementById('filter-type').value = '';
-  document.getElementById('sort-by').value = 'date-desc';
+  document.getElementById('filter-state').value='';
+  document.getElementById('filter-type').value='';
+  document.getElementById('sort-by').value='date-desc';
   applyFilters();
 }
-
-// Initial render
 applyFilters();
 </script>
 </body>
